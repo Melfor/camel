@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.camel.springboot:camel-spring-boot-starter:3.6.0'
+    implementation 'org.apache.camel:camel-kafka:3.6.0'
+    implementation 'org.apache.camel:camel-jackson:3.6.0'
+    implementation 'org.apache.camel:camel-jetty:3.6.0'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.3.RELEASE'
+    testCompile 'junit:junit:4.12'
+}
