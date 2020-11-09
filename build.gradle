@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation 'org.apache.camel.springboot:camel-spring-boot-starter:3.6.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.4.RELEASE'
     implementation 'org.apache.camel:camel-kafka:3.6.0'
     implementation 'org.apache.camel:camel-jackson:3.6.0'
     implementation 'org.apache.camel:camel-jetty:3.6.0'

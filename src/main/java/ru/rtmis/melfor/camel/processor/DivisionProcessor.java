@@ -13,7 +13,7 @@ public class DivisionProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         CalcDto calcDto = (CalcDto) exchange.getIn().getBody();
         int result = calcDto.getFirst() / calcDto.getSecond();
-        ResultDto resultDto = new ResultDto(result);
+        ResultDto resultDto = new ResultDto(calcDto.getId(), result);
         exchange.getIn().setBody(resultDto);
     }
 }

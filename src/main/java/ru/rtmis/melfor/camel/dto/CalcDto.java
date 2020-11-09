@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CalcDto {
+    private Integer id;
     private Integer first;
     private Integer second;
 }
