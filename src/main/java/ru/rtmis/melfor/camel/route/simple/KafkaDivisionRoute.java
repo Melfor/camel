@@ -1,4 +1,4 @@
-package ru.rtmis.melfor.camel.routes;
+package ru.rtmis.melfor.camel.route.simple;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import org.apache.camel.model.dataformat.JsonLibrary;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import ru.rtmis.melfor.camel.dto.CalcDto;
-import ru.rtmis.melfor.camel.processor.DivisionProcessor;
+import ru.rtmis.melfor.camel.processor.arithmetic.DivisionProcessor;
 
 @Setter
 @Component

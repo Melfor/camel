@@ -1,4 +1,4 @@
-package ru.rtmis.melfor.camel.routes;
+package ru.rtmis.melfor.camel.route.dynamic.routing;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.camel.builder.RouteBuilder;

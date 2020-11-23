@@ -1,4 +1,4 @@
-package ru.rtmis.melfor.camel.processor;
+package ru.rtmis.melfor.camel.processor.arithmetic;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

@@ -1,4 +1,4 @@
-package ru.rtmis.melfor.camel.routes;
+package ru.rtmis.melfor.camel.route.simple;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -9,9 +9,9 @@ import org.apache.camel.support.processor.PredicateValidationException;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import ru.rtmis.melfor.camel.dto.CalcDto;
-import ru.rtmis.melfor.camel.processor.CalcDtoValidationProcessor;
-import ru.rtmis.melfor.camel.processor.ExceptionProcessor;
-import ru.rtmis.melfor.camel.processor.ValidationProcessor;
+import ru.rtmis.melfor.camel.processor.validation.CalcDtoValidationProcessor;
+import ru.rtmis.melfor.camel.processor.exception.ExceptionProcessor;
+import ru.rtmis.melfor.camel.processor.validation.ValidationProcessor;
 
 @Setter
 @Component

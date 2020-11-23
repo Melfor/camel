@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create_table_camel_mapping"
+               author="sergei.tkachev"
+               dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists schemaName="public" tableName="mapping"/>
+            </not>
+        </preConditions>
+        <sql>
+            CREATE TABLE public.mapping
+            (
+                system_id   INTEGER       NOT NULL UNIQUE,
+                id          VARCHAR(30)   NOT NULL,
+                first       VARCHAR(30)   NOT NULL,
+                second      VARCHAR(30)   NOT NULL
+            );
+            COMMENT ON COLUMN public.mapping.system_id  IS 'Id системы';
+            COMMENT ON COLUMN public.mapping.id         IS 'Наименование поля id';
+            COMMENT ON COLUMN public.mapping.first      IS 'Наименование поля first';
+            COMMENT ON COLUMN public.mapping.second     IS 'Наименование поля second';
+        </sql>
+        <rollback>
+            <dropTable schemaName="public" tableName="mapping"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

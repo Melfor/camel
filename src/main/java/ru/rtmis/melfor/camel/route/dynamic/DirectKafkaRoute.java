@@ -1,4 +1,4 @@
-package ru.rtmis.melfor.camel.routes;
+package ru.rtmis.melfor.camel.route.dynamic;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

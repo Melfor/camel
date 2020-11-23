@@ -1,4 +1,4 @@
-package ru.rtmis.melfor.camel.routes;
+package ru.rtmis.melfor.camel.route.dynamic;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -14,11 +14,12 @@ import ru.rtmis.melfor.camel.dto.ResultDto;
 @ConfigurationProperties("result.route")
 public class KafkaResultDirectRoute extends RouteBuilder {
     private String fromRoute;
+    private String toRoute;
 
     @Override
     public void configure() throws Exception {
         from(fromRoute)
                 .unmarshal().json(JsonLibrary.Jackson, ResultDto.class)
-                .toD("direct:${body.id}");
+                .toD(toRoute);
     }
 }

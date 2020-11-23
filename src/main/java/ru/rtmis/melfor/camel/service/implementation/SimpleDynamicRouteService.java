@@ -1,11 +1,12 @@
-package ru.rtmis.melfor.camel.service;
+package ru.rtmis.melfor.camel.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.apache.camel.CamelContext;
 import org.springframework.stereotype.Service;
 import ru.rtmis.melfor.camel.dto.RebuildRouteDto;
-import ru.rtmis.melfor.camel.routes.DynamicRestDirectRoute;
+import ru.rtmis.melfor.camel.route.dynamic.routing.DynamicRestDirectRoute;
+import ru.rtmis.melfor.camel.service.DynamicRouteService;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +24,5 @@ public class SimpleDynamicRouteService implements DynamicRouteService {
         camelContext.getRouteController().stopRoute(routeId);
         camelContext.removeRoute(routeId);
         camelContext.addRoutes(new DynamicRestDirectRoute(routeId, uri));
-        //doesn't set uri, mb cause of spring boot property autoconfig
-        //camelContext.addRouteFromTemplate(routeId, "dynamicTemplate", parameters);
     }
 }
